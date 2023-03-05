@@ -2,6 +2,7 @@ pipeline{
     agent any
     stages{
         stage("AWS Demo"){
+            docker { image 'amazon/aws-cli:latest' }
             steps{
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
